@@ -24,6 +24,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: RESGen
-        path: D:\a\Release\RESGen.exe
+        path: D:\a\resgen\resgen\Release\RESGen.exe
         if-no-files-found: error
   
