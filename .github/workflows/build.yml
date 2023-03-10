@@ -23,8 +23,8 @@ jobs:
     - name: Archive RESGen
       uses: actions/upload-artifact@v3
       with:
-        name: RESGen
-        path: D:\a\resgen\resgen\Release\RESGen.exe
+        name: RESGen-windows
+        path: Release\RESGen.exe
         if-no-files-found: error
 
   build-linux:
@@ -40,6 +40,6 @@ jobs:
     - name: Archive RESGen
       uses: actions/upload-artifact@v3
       with:
-        name: RESGen
+        name: RESGen-linux
         path: bin
         if-no-files-found: error
