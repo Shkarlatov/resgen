@@ -41,5 +41,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: RESGen
-        path: D:\a\resgen\resgen\bin\resgen
+        path: /bin
         if-no-files-found: error
