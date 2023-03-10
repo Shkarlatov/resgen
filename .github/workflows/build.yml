@@ -1,4 +1,4 @@
-name: MSBuild
+name: Build RESGen
 
 on: [push]
 
@@ -7,7 +7,7 @@ env:
   BUILD_CONFIGURATION: Release
 
 jobs:
-  build:
+  build-windows:
     runs-on: windows-latest
 
     steps:
@@ -26,4 +26,20 @@ jobs:
         name: RESGen
         path: D:\a\resgen\resgen\Release\RESGen.exe
         if-no-files-found: error
-  
+
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: make clean && make
+
+    - name: Archive RESGen
+      uses: actions/upload-artifact@v3
+      with:
+        name: RESGen
+        path: D:\a\resgen\resgen\bin\resgen
+        if-no-files-found: error
