@@ -1,6 +1,6 @@
 name: Build RESGen
 
-on: [push]
+on: [push, workflow_dispatch]
 
 env:
   SOLUTION_FILE_PATH: RESGen.sln
